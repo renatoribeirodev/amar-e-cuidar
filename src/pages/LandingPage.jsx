@@ -18,7 +18,8 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800 overflow-x-hidden">
       
       {/* --- NAVBAR (MENU SUPERIOR) --- */}
-      <nav className="fixed w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50 transition-all">
+      {/* MUDANÇA AQUI: bg-blue-50 para destacar do fundo branco + shadow-sm */}
+      <nav className="fixed w-full bg-blue-50/95 backdrop-blur-md border-b border-blue-100 z-50 transition-all shadow-sm">
         <div className="max-w-6xl mx-auto px-4 h-24 flex items-center justify-between"> 
           
           <div className="cursor-pointer py-2" onClick={() => window.scrollTo(0,0)}>
@@ -29,14 +30,14 @@ export default function LandingPage() {
             />
           </div>
 
-          {/* Links do Menu (Desktop) - AUMENTEI A FONTE AQUI (text-base) */}
+          {/* Links do Menu (Desktop) */}
           <div className="hidden md:flex gap-8 text-base font-medium text-gray-600">
             <button onClick={() => scrollToSection('projeto')} className="hover:text-blue-600 transition">O Projeto</button>
             <button onClick={() => scrollToSection('funcionalidades')} className="hover:text-blue-600 transition">Funcionalidades</button>
             <button onClick={() => scrollToSection('contato')} className="hover:text-blue-600 transition">Contato</button>
           </div>
 
-          {/* Botão CTA - COR PADRONIZADA (bg-blue-600) */}
+          {/* Botão CTA */}
           <div className="hidden md:block">
             <button 
               onClick={() => navigate('/app')}
@@ -55,12 +56,12 @@ export default function LandingPage() {
           </button>
         </div>
 
-        {/* MENU MOBILE */}
+        {/* MENU MOBILE - Ajustado para bg-blue-50 também */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-xl py-4 px-4 flex flex-col gap-4 animate-fade-in-down">
-            <button onClick={() => scrollToSection('projeto')} className="text-left py-2 font-medium text-gray-700 border-b border-gray-50">O Projeto</button>
-            <button onClick={() => scrollToSection('funcionalidades')} className="text-left py-2 font-medium text-gray-700 border-b border-gray-50">Funcionalidades</button>
-            <button onClick={() => scrollToSection('contato')} className="text-left py-2 font-medium text-gray-700 border-b border-gray-50">Contato</button>
+          <div className="md:hidden bg-blue-50 border-t border-blue-100 absolute w-full left-0 shadow-xl py-4 px-4 flex flex-col gap-4 animate-fade-in-down">
+            <button onClick={() => scrollToSection('projeto')} className="text-left py-2 font-medium text-gray-700 border-b border-blue-100">O Projeto</button>
+            <button onClick={() => scrollToSection('funcionalidades')} className="text-left py-2 font-medium text-gray-700 border-b border-blue-100">Funcionalidades</button>
+            <button onClick={() => scrollToSection('contato')} className="text-left py-2 font-medium text-gray-700 border-b border-blue-100">Contato</button>
             <button 
               onClick={() => navigate('/app')}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-bold mt-2 transition"
@@ -76,8 +77,6 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           
           <div className="space-y-6 text-center md:text-left">
-            {/* REMOVIDO AQUI: A div da "Versão 1.0 (MVP)" foi deletada */}
-            
             <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
               Segurança e Cuidado na <span className="text-blue-600">palma da mão.</span>
             </h1>
@@ -85,7 +84,6 @@ export default function LandingPage() {
               O sistema que simplifica a rotina dos cuidadores e garante o histórico de saúde das crianças. Simples, rápido e acessível.
             </p>
             <div className="pt-4 flex justify-center md:justify-start gap-4">
-              {/* Botão CTA - COR PADRONIZADA (bg-blue-600 igual ao menu) */}
               <button 
                 onClick={() => navigate('/app')}
                 className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 rounded-xl font-bold shadow-xl shadow-blue-200 transition w-full md:w-auto transform hover:-translate-y-1"
@@ -172,7 +170,6 @@ export default function LandingPage() {
       <footer id="contato" className="bg-blue-900 text-white py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left">
           
-          {/* LOGO RODAPÉ */}
           <div className="flex flex-col items-center md:items-start">
             <div className="mb-6 inline-block">
               <img 
@@ -198,14 +195,12 @@ export default function LandingPage() {
           <div>
             <h4 className="font-bold text-lg mb-4">Acesso Rápido</h4>
             <ul className="space-y-3 text-blue-200 cursor-pointer text-sm md:text-base">
-              {/* REMOVIDO: Login do Cuidador */}
               <li className="hover:text-white">Portal da Transparência</li>
               <li className="hover:text-white">Política de Privacidade</li>
             </ul>
           </div>
         </div>
 
-        {/* COPYRIGHT - COR AJUSTADA PARA BRANCO (text-white) */}
         <div className="max-w-6xl mx-auto px-4 mt-8 md:mt-12 pt-8 border-t border-blue-800 text-center text-white text-xs md:text-sm opacity-90">
           © 2026 Amar é Cuidar. Todos os direitos reservados. Projeto Open Source.
         </div>
